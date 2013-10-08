@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/prefixfree.min.js"></script>
+	<script src="js/jquery.mb.countdown.js"></script>
+
+	<link rel="stylesheet" href="css/mb.countdown.css">
+	<style>
+	body {
+		background: #444;
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 80px 20px;
+		font-family: Arial, sans-serif;
+		text-align: center;
+		color: #ccc;
+	}
+	.countdown {
+		margin-top: 20px;
+	}
+	</style>
+
+	<title>Countdown</title>
+</head>
+<body>
+
+	<h1>Countdown timer by Martin Barri</h1>
+
+	<div class="countdown"></div>
+	
+	<script>
+	/*
+	 * Set desired timestamp
+	 * 
+	 * Example:
+	 * var ts = new Date('Sun Dec 24 2013 23:59:59 GMT+0100');
+	 */
+	var ts = new Date(+new Date + 12096e5); // Two weeks from now
+	$('.countdown').countdown({
+		timestamp: ts
+	});
+	</script>
+</body>
+</html>
