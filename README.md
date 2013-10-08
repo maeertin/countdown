@@ -1,10 +1,10 @@
 # Countdown Timer
 
-A fancy animated countdown timer done in css and javascript
+A fancy animated countdown timer done in css and javascript. Demo: http://martin-barri.com/demos/countdown/
 
 ## Usage
 
-Include javascript and css files
+Include javascript and css files.
 
 Example:
 
