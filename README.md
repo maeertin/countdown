@@ -15,7 +15,10 @@ Example:
 // Set desired timestamp
 var ts = new Date('Sun Dec 24 2013 23:59:59 GMT+0100');
 $('.countdown').countdown({
-	timestamp: ts
+	timestamp: ts,
+	callback: function(secondsLeft) {
+		// ...
+	}
 });
 </script>
 ```

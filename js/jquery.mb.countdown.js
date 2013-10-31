@@ -1,11 +1,14 @@
 /**
- * Countdown timer 0.0.2
+ * Countdown timer 0.0.4
  * @author Martin Barri
+ * @website https://github.com/maeertin/countdown
  */
-(function($){
+(function($) {
 	
 	// Creating the plugin
-	$.fn.countdown = function(settings){
+	$.fn.countdown = function(settings) {
+
+		var el = this;
 		
 		var options = $.extend({
 			timestamp: 0
@@ -16,19 +19,19 @@
 			hours   = 60*60,
 			minutes = 60;
 
-		var left, d, h, m, s;
+		var _left, left, d, h, m, s;
 
 		// Initialize the plugin
-		init(this);
+		init(el);
 
-		(function tick(){
+		(function tick() {
 			
 			// Time left
 			left = Math.floor((options.timestamp - (new Date())) / 1000);
-			
-			if (left < 0) {
-				left = 0;
-			}
+			_left = left = left > 0 ? left : 0;
+
+			// Callback
+			if (settings.callback) settings.callback(left);
 			
 			// Number of days left
 			d = Math.floor(left / days);
@@ -62,7 +65,7 @@
 			animate('.secondPlay', s);
 
 			// Scheduling another call of this function in 1s
-			setTimeout(tick, 1000);
+			if (_left > 0) setTimeout(tick, 1000);
 		})();
 
 		function init(element) {
@@ -100,7 +103,7 @@
 							</div>\
 						</a>\
 					</div>';
-				$(target).append(output);
+				$(el).find(target).append(output);
 			}
 		}
 
