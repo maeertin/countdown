@@ -1,5 +1,5 @@
 /**
- * Countdown timer 0.0.3
+ * Countdown timer 0.0.4
  * @author Martin Barri
  * @website https://github.com/maeertin/countdown
  */
