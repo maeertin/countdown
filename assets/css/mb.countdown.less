@@ -1,0 +1,206 @@
+/**
+ * Countdown timer 0.0.4
+ * @author Martin Barri
+ * @website https://github.com/maeertin/countdown
+ */
+
+.countdown {
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid #000;
+	display: inline-block;
+	border-radius: 13px;
+	position: relative;
+
+	.flip {
+		position: relative;
+		height: 60px;
+		width: 60px;
+		float: left;
+		line-height: 60px;
+		font-weight: 700;
+		font-size: 36px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, .7);
+
+		+ .flip {
+			margin-left: 1px;
+		}
+
+		&:first-child {
+			// border radiuses
+			border-radius: 13px 0 0 13px;
+			&:before       { border-radius: 13px 0 0 0 }
+			.ticker a .inn { border-radius: 12px 0 0 12px }
+
+			// .ticker.before .up .shadow, .ticker.active .up .shadow {
+			// 	border-radius: 10px 10px 0 0;
+			// }
+
+			// .ticker.before .down .shadow, .ticker.active .down .shadow {
+			// 	border-radius: 0 0 10px 10px;
+			// }
+		}
+
+		&:last-child {
+			// border radiuses
+			border-radius: 0 13px 13px 0;
+			&:before       { border-radius: 0 12px 0 0 }
+			.ticker a .inn { border-radius: 0 12px 12px 0 }
+
+			.up, .down { border: 0 }
+		}
+	}
+
+	.ticker {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		left: 0;
+		top: 0;
+
+		&:first-child {
+			z-index: 2;
+		}
+
+		.up {
+			border-right: 1px solid #202020;
+
+			.inn { top: 0 }
+		}
+
+		.down {
+			border-right: 1px solid #141414;
+
+			.inn { bottom: 0 }
+		}
+
+		a {
+			perspective: 150px;
+			display: block;
+			height: 100%;
+			cursor: text;
+
+			div {
+				position: absolute;
+				overflow: hidden;
+				height: 50%;
+				width: 100%;
+				z-index: 1;
+				left: 0;
+
+				&.up   { transform-origin: 50% 100%; top: 0; }
+				&.down { transform-origin: 50% 0%; bottom: 0; }
+			}
+
+			.shadow {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				z-index: 2;
+			}
+
+			.inn {
+				background-color: #2e2e2e;
+				position: absolute;
+				height: 200%;
+				width: 100%;
+				z-index: 1;
+				left: 0;
+				text-shadow: 0 1px 2px #000;
+				text-align: center;
+				color: #eee;
+				background-image: -webkit-linear-gradient(top, rgb(46, 46, 46), rgb(26, 26, 26));
+				background-image: linear-gradient(top, rgb(46, 46, 46), rgb(26, 26, 26));
+			}
+		}
+
+		// layers order
+		&.active, &.active .down, &.before .up { z-index: 2; }
+		&.before                               { z-index: 3; }
+		
+		// flip animations
+		&.active       { animation: asd .5s .5s linear both; }
+		&.active .down { animation: turn .5s .5s linear both; }
+		&.before .up   { animation: turn2 .5s linear both; }
+
+		// Shadow animations
+		
+		// animates the shadow of the top two plates
+		&.before .up .shadow,
+		&.active .up .shadow {
+			border-radius: 0 10px 0 0;
+			background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+			background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+		}
+		&.before .up .shadow { animation: show .5s linear both; }
+		&.active .up .shadow { animation: hide .5s .3s linear both; }
+
+		// animates the shadow of the bottom two plates
+		&.before .down .shadow,
+		&.active .down .shadow {
+			border-radius: 0 0 10px 0;
+			background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+		}
+		&.before .down .shadow { animation: show .5s linear both; }
+		&.active .down .shadow { animation: hide .5s .3s linear both; }
+	}
+
+	// the mid border with gradient
+	.flip:before {
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		pointer-events: none;
+		z-index: 8;
+		height: 30px;
+		width: 60px;
+		left: 1px;
+		top: 0;
+		box-shadow: 0 -1px 0 rgba(0, 0, 0, .2) inset, 0 1px 0 rgba(255, 255, 255, .04), 0 5px 100px rgba(255, 255, 255, .3);
+		background: -webkit-linear-gradient(top, transparent 80%, rgba(0, 0, 0, .4));
+		background: linear-gradient(top, transparent 80%, rgba(0, 0, 0, .4));
+	}
+
+	// the rounded gears holding the flippers
+	&:before, .flip:after {
+		border: 1px solid black;
+		border-radius: 3px;
+		z-index: 9;
+		height: 15px;
+		width: 3px;
+		top: 22px;
+		box-shadow: -1px -1px 0 rgba(0, 0, 0, .2), 1px 1px 0 rgba(255, 255, 255, .05) inset, 1px 0 10px rgba(0, 0, 0, 1), 1px 1px 0 rgba(255, 255, 255, .06);
+		background: -webkit-linear-gradient(top, black, #424242 35%, #363636 52%, black);
+		background: linear-gradient(top, black, #424242 35%, #363636 52%, black);
+	}
+
+	.flip:after { right: -3px }
+	&:before    { left: -2px }
+
+	&:before, .flip:before, .flip:after {
+		position: absolute;
+		display: block;
+		content: '';
+	}
+}
+
+@keyframes asd {
+	0%   { z-index: 2; }
+	5%   { z-index: 6; }
+	100% { z-index: 4; }
+}
+@keyframes turn {
+	0%   { transform: rotateX(90deg); }
+	100% { transform: rotateX(0deg); }
+}
+@keyframes turn2 {
+	0%   { transform: rotateX(0deg); }
+	100% { transform: rotateX(-90deg); }
+}
+@keyframes show {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes hide {
+	0%   { opacity: 1; }
+	100% { opacity: 0; }
+}

@@ -3,34 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/prefixfree.min.js"></script>
-	<script src="js/jquery.mb.countdown.js"></script>
-
-	<link rel="stylesheet" href="css/mb.countdown.css">
-	<style>
-	body {
-		background: #444;
-		max-width: 600px;
-		margin: 0 auto;
-		padding: 80px 20px;
-		font-family: Arial, sans-serif;
-		text-align: center;
-		color: #ccc;
-	}
-	.countdown {
-		margin-top: 20px;
-	}
-	</style>
+	<link rel="stylesheet/less" type="text/css" href="assets/css/mb.countdown.less">
+	<link rel="stylesheet" href="assets/css/main.css">
 
 	<title>Countdown</title>
 </head>
 <body>
 
-	<h1>Countdown timer by Martin Barri</h1>
+	<div class="center">
+		<h1>Countdown timer</h1>
+		<h3>by Martin Barri</h3>
 
-	<div class="countdown"></div>
+		<div class="countdown"></div>
+	</div>
 	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
+	<script src="assets/js/jquery.mb.countdown.js"></script>
+
 	<script>
 	/*
 	 * Set desired timestamp
@@ -40,7 +31,7 @@
 	 */
 	var ts = new Date(+new Date + 12096e5); // Two weeks from now
 	$('.countdown').countdown({
-		timestamp: ts
+		timestamp : ts
 	});
 	</script>
 </body>

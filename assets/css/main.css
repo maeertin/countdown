@@ -1,0 +1,32 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	padding: 80px 20px;
+	background: #444;
+	max-width: 600px;
+	margin: 0 auto;
+	display: table;
+	font-family: Helvetica, Arial, sans-serif;
+	text-align: center;
+	color: #ccc;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0 0 0.2em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.1);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: 100;
+}
+
+.countdown {
+	margin-top: 20px;
+}
+
+.center {
+	vertical-align: middle;
+	display: table-cell;
+}
