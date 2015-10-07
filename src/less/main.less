@@ -1,0 +1,187 @@
+// Vendor
+@import "bower_components/lesshat/build/lesshat.less";
+
+/**
+ * Countdown timer 0.1.0
+ * @author Martin Barri
+ * @website https://github.com/maeertin/countdown
+ */
+
+.keyframes(~'asd,   0%{ z-index: 2; } 5%{ z-index: 6; } 100%{ z-index: 4; }');
+.keyframes(~'turn,  0%{ transform: rotateX(90deg); } 100%{ transform: rotateX(0deg); }');
+.keyframes(~'turn2, 0%{ transform: rotateX(0deg); } 100%{ transform: rotateX(-90deg); }');
+.keyframes(~'show,  0%{ opacity: 0; } 100%{ opacity: 1; }');
+.keyframes(~'hide,  0%{ opacity: 1; } 100%{ opacity: 0; }');
+
+.countdown {
+	display: inline-block;
+	position: relative;
+
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid #000;
+	border-radius: 13px;
+
+	.countdown-flip {
+		.size(60px);
+		position: relative;
+		float: left;
+
+		box-shadow: 0 2px 5px rgba(0, 0, 0, .7);
+		
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 60px;
+
+		+ * {
+			margin-left: 1px;
+		}
+
+		&:first-child {
+			// border radiuses
+			border-radius: 13px 0 0 13px;
+			&:before                 { border-radius: 13px 0 0 0 }
+			.countdown-ticker a .inn { border-radius: 12px 0 0 12px }
+		}
+
+		&:last-child {
+			// border radiuses
+			border-radius: 0 13px 13px 0;
+			&:before                 { border-radius: 0 12px 0 0 }
+			.countdown-ticker a .inn { border-radius: 0 12px 12px 0 }
+
+			.up, .down { border: 0 }
+		}
+	}
+
+	.countdown-ticker {
+		.size(100%);
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 0;
+
+		&:first-child {
+			z-index: 2;
+		}
+
+		.up {
+			border-right: 1px solid #202020;
+
+			.inn { top: 0 }
+		}
+
+		.down {
+			border-right: 1px solid #141414;
+
+			.inn { bottom: 0 }
+		}
+
+		a {
+			display: block;
+			height: 100%;
+
+			.perspective(150px);
+			cursor: text;
+
+			div {
+				.size(100%, 50%);
+				position: absolute;
+				overflow: hidden;
+				z-index: 1;
+				left: 0;
+
+				&.up   { top: 0; .transform-origin(50% 100%); }
+				&.down { bottom: 0; .transform-origin(50% 0%); }
+			}
+
+			.shadow {
+				.size(100%);
+				position: absolute;
+				z-index: 2;
+			}
+
+			.inn {
+				.size(100%, 200%);
+				position: absolute;
+				z-index: 1;
+				left: 0;
+				
+				background-color: #2e2e2e;
+				.background-image(linear-gradient(top, #2e2e2e, #1a1a1a));
+				
+				color: #eee;
+				text-align: center;
+				text-shadow: 0 1px 2px #000;
+			}
+		}
+
+		// layers order
+		&.active, &.active .down, &.before .up { z-index: 2; }
+		&.before                               { z-index: 3; }
+		
+		// flip animations
+		&.active       { .animation(asd .5s .5s linear both); }
+		&.active .down { .animation(turn .5s .5s linear both); }
+		&.before .up   { .animation(turn2 .5s linear both); }
+
+		// Shadow animations
+		
+		// animates the shadow of the top two plates
+		&.before .up .shadow,
+		&.active .up .shadow {
+			border-radius: 0 10px 0 0;
+
+			.background-image(linear-gradient(to bottom, fade(#000, 10%) 0%, fade(#000, 10%) 100%));
+		}
+		&.before .up .shadow { .animation(show .5s linear both); }
+		&.active .up .shadow { .animation(hide .5s .3s linear both); }
+
+		// animates the shadow of the bottom two plates
+		&.before .down .shadow,
+		&.active .down .shadow {
+			border-radius: 0 0 10px 0;
+
+			.background-image(linear-gradient(to bottom, fade(#000, 10%) 0%, fade(#000, 10%) 100%));
+		}
+		&.before .down .shadow { .animation(show .5s linear both); }
+		&.active .down .shadow { .animation(hide .5s .3s linear both); }
+	}
+
+	// the mid border with gradient
+	.countdown-flip:before {
+		.size(60px, 30px);
+		z-index: 8;
+		left: 1px;
+		top: 0;
+		
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+
+		.background-image(linear-gradient(top, transparent 80%, fade(#000, 40%) 100%));
+		box-shadow: 0 -1px 0 rgba(0, 0, 0, .2) inset, 0 1px 0 rgba(255, 255, 255, .04), 0 5px 100px rgba(255, 255, 255, .3);
+
+		pointer-events: none;
+	}
+
+	// the rounded gears holding the flippers
+	&:before, .countdown-flip:after {
+		.size(3px, 15px);
+		z-index: 9;
+		top: 22px;
+
+		border: 1px solid #000;
+		border-radius: 3px;
+
+		.background-image(linear-gradient(top, #000, #424242 35%, #363636 52%, #000));
+		box-shadow: -1px -1px 0 fade(#000, 20%), 1px 1px 0 fade(#fff, 5%) inset, 1px 0 10px #000, 1px 1px 0 fade(#fff, 6%);
+	}
+
+	.countdown-flip:after { right: -3px }
+	&:before    { left: -2px }
+
+	&:before, .countdown-flip:before, .countdown-flip:after {
+		display: block;
+		position: absolute;
+
+		content: '';
+	}
+}

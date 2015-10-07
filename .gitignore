@@ -1,38 +1,38 @@
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.orig
-*.log
-*.rej
-*.swo
-*.swp
-*.vi
-*~
-*.sass-cache
-
-# OS or Editor folders
+### OSX
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
-.cache
-.project
-.settings
-.tmproj
-*.esproj
-nbproject
-*.sublime-project
-*.sublime-workspace
 
-# Dreamweaver added files
-_notes
-dwsync.xml
+### Vagrant
+acceptance_config.yml
+boxes/*
+/.vagrant
+/website/docs/.vagrant
+/website/www/.vagrant
+/vagrant-spec.config.rb
 
-# Komodo
-*.komodoproject
-.komodotools
+### Wordpress
+wp/
+/wp-content/advanced-cache.php
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/blogs.dir/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/wp-cache-config.php
+/wp-content/logs
+/wp-content/themes/translate
 
-# Folders to ignore
-.hg
-.svn
-.CVS
-.idea
-node_modules
+### Composer
+/vendor/
+
+### Npm
+node_modules/
+
+### Bower
+bower_components/

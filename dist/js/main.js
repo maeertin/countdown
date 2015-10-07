@@ -1,5 +1,5 @@
 /**
- * Countdown timer 0.0.4
+ * Countdown timer 0.1.0
  * @author Martin Barri
  * @website https://github.com/maeertin/countdown
  */
@@ -26,13 +26,12 @@
 		init();
 
 		function init() {
-			$el.addClass('theme-' + settings.theme);
 			$el.append('\
-				<div class="flip dayPlay" />\
-				<div class="flip hourPlay" />\
-				<div class="flip minutePlay" />\
-				<div class="flip secondPlay" />\
-			');
+				<div class="countdown-flip js-dayPlay" />\
+				<div class="countdown-flip js-hourPlay" />\
+				<div class="countdown-flip js-minutePlay" />\
+				<div class="countdown-flip js-secondPlay" />\
+			').addClass('countdown theme-' + settings.theme);
 
 			tick();
 		}
@@ -58,7 +57,7 @@
 				$target.find('.start, .active').removeClass('start active').addClass('before');
 
 				var output = '\
-					<div class="ticker ' + ( pageLoad ? 'start' : 'active' ) + '" data-active="' + number + '">\
+					<div class="countdown-ticker ' + ( pageLoad ? 'start' : 'active' ) + '" data-active="' + number + '">\
 						<a>\
 							<div class="up">\
 								<div class="shadow"></div>\
@@ -104,16 +103,16 @@
 			s = twoDigit(s);
 			
 			// Days
-			animate('.dayPlay', d);
+			animate('.js-dayPlay', d);
 
 			// Hours
-			animate('.hourPlay', h);
+			animate('.js-hourPlay', h);
 
 			// Minutes
-			animate('.minutePlay', m);
+			animate('.js-minutePlay', m);
 
 			// Seconds
-			animate('.secondPlay', s);
+			animate('.js-secondPlay', s);
 
 			// Scheduling another call of this function in 1s
 			if (_left > 0)

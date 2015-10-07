@@ -1,0 +1,23 @@
+{
+	"less": {
+		"src": "src/less/main.less",
+		"dist": "dist/css",
+		"id": "main"
+	},
+	"js": {
+		"src": "src/js/main.js",
+		"dist": "dist/js",
+		"id": "main"
+	},
+	"bs": {
+		"host": "localhost:3333",
+		"node": {
+			"start": true,
+			"script": "./index.js"
+		}
+	},
+	"watch": {
+		"less": "src/less/**/*.less",
+		"js": "src/js/**/*.js"
+	}
+}

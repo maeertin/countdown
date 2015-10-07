@@ -1,0 +1,7 @@
+{
+  "name": "countdownjs",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "lesshat": "~3.0.2"
+  }
+}

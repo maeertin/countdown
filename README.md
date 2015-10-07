@@ -1,10 +1,8 @@
-# Countdown Timer
+# Countdown JS
 
-A fancy animated countdown timer done in css and javascript. Demo: http://martin-barri.com/demos/countdown/
+A fancy animated countdown timer done in css and javascript.
 
 ## Usage
-
-Include javascript and css files.
 
 Example:
 
@@ -13,9 +11,9 @@ Example:
 
 <script>
 // Set desired timestamp
-var ts = new Date('Sun Dec 24 2013 23:59:59 GMT+0100');
+var timestamp = new Date('Sun Dec 24 2013 23:59:59 GMT+0100');
 $('.countdown').countdown({
-	timestamp: ts,
+	timestamp: timestamp,
 	callback: function(secondsLeft) {
 		// ...
 	}
