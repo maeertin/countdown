@@ -1,5 +1,5 @@
 /**
- * Countdown timer 0.1.0
+ * Countdown JS
  * @author Martin Barri
  * @website https://github.com/maeertin/countdown
  */
@@ -18,7 +18,7 @@
 
 		// Extend settings
 		settings = $.extend({
-			timestamp : new Date(new Date() + 12096e5), // two weeks from now
+			timestamp : new Date(+new Date() + 12096e5), // two weeks from now
 			theme     : 'advanced'
 		}, settings);
 

@@ -10,11 +10,7 @@
 		"id": "mb.countdown"
 	},
 	"bs": {
-		"host": "localhost:4444",
-		"node": {
-			"start": true,
-			"script": "./index.js"
-		}
+		"host": "./"
 	},
 	"watch": {
 		"less": "src/less/**/*.less",
