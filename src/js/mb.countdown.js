@@ -1,5 +1,5 @@
 /**
- * Countdown timer 0.1.0
+ * Countdown JS
  * @author Martin Barri
  * @website https://github.com/maeertin/countdown
  */
