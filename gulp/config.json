@@ -10,7 +10,7 @@
 		"id": "main"
 	},
 	"bs": {
-		"host": "localhost:3333",
+		"host": "localhost:4444",
 		"node": {
 			"start": true,
 			"script": "./index.js"

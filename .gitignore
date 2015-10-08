@@ -7,30 +7,6 @@
 ehthumbs.db
 Thumbs.db
 
-### Vagrant
-acceptance_config.yml
-boxes/*
-/.vagrant
-/website/docs/.vagrant
-/website/www/.vagrant
-/vagrant-spec.config.rb
-
-### Wordpress
-wp/
-/wp-content/advanced-cache.php
-/wp-content/backup-db/
-/wp-content/backups/
-/wp-content/blogs.dir/
-/wp-content/cache/
-/wp-content/upgrade/
-/wp-content/uploads/
-/wp-content/wp-cache-config.php
-/wp-content/logs
-/wp-content/themes/translate
-
-### Composer
-/vendor/
-
 ### Npm
 node_modules/
 
