@@ -1,5 +1,5 @@
 {
-  "name": "mb-countdown",
+  "name": "mb.countdown",
   "devDependencies": {
     "lesshat": "~3.0.2"
   },

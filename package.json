@@ -1,5 +1,5 @@
 {
-  "name": "mb-countdown",
+  "name": "mb.countdown",
   "devDependencies": {
     "browser-sync": "^2.9.10",
     "express": "^4.13.3",

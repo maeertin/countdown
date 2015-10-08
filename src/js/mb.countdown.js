@@ -18,7 +18,7 @@
 
 		// Extend settings
 		settings = $.extend({
-			timestamp : new Date(+new Date + 12096e5), // two weeks from now
+			timestamp : new Date(new Date() + 12096e5), // two weeks from now
 			theme     : 'advanced'
 		}, settings);
 
@@ -26,12 +26,12 @@
 		init();
 
 		function init() {
-			$el.append('\
-				<div class="countdown-flip js-dayPlay" />\
-				<div class="countdown-flip js-hourPlay" />\
-				<div class="countdown-flip js-minutePlay" />\
-				<div class="countdown-flip js-secondPlay" />\
-			').addClass('countdown theme-' + settings.theme);
+			$el.append(
+				'<div class="countdown-flip js-dayPlay" />' +
+				'<div class="countdown-flip js-hourPlay" />' +
+				'<div class="countdown-flip js-minutePlay" />' +
+				'<div class="countdown-flip js-secondPlay" />'
+			).addClass('countdown theme-' + settings.theme);
 
 			tick();
 		}
@@ -56,19 +56,19 @@
 				$target.find('.before').remove();
 				$target.find('.start, .active').removeClass('start active').addClass('before');
 
-				var output = '\
-					<div class="countdown-ticker ' + ( pageLoad ? 'start' : 'active' ) + '" data-active="' + number + '">\
-						<a>\
-							<div class="up">\
-								<div class="shadow"></div>\
-								<div class="inn">' + number + '</div>\
-							</div>\
-							<div class="down">\
-								<div class="shadow"></div>\
-								<div class="inn">' + number + '</div>\
-							</div>\
-						</a>\
-					</div>';
+				var output = 
+					'<div class="countdown-ticker ' + ( pageLoad ? 'start' : 'active' ) + '" data-active="' + number + '">' +
+						'<a>' +
+							'<div class="up">' +
+								'<div class="shadow"></div>' +
+								'<div class="inn">' + number + '</div>' +
+							'</div>' +
+							'<div class="down">' +
+								'<div class="shadow"></div>' +
+								'<div class="inn">' + number + '</div>' +
+							'</div>' +
+						'</a>' +
+					'</div>';
 
 				$target.append(output);
 			}

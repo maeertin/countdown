@@ -32,7 +32,7 @@
 	}
 	</style>
 
-	<link rel="stylesheet" href="dist/css/main.min.css">
+	<link rel="stylesheet" href="dist/css/mb.countdown.min.css">
 
 	<title>Countdown JS</title>
 </head>
@@ -47,7 +47,7 @@
 	</div>
 	
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="dist/js/main.min.js"></script>
+	<script src="dist/js/mb.countdown.min.js"></script>
 	<script>
 	/*
 	 * Set desired timestamp
@@ -55,7 +55,7 @@
 	 * Example:
 	 * var ts = new Date('Sun Dec 24 2013 23:59:59 GMT+0100');
 	 */
-	var ts = new Date(+new Date + 12096e5); // Two weeks from now
+	var ts = new Date(new Date() + 12096e5); // Two weeks from now
 	$('.countdown').countdown({
 		timestamp : ts
 	});
