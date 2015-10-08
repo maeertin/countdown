@@ -44,82 +44,79 @@ lesshat-selector {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid #000;
   border-radius: 13px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
 }
-.countdown .countdown-flip {
-  width: 60px;
-  height: 60px;
+.countdown .flipper {
   position: relative;
   float: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 60px;
 }
-.countdown .countdown-flip + * {
+.countdown .flipper + * {
   margin-left: 1px;
 }
-.countdown .countdown-flip:first-child {
+.countdown .flipper:first-child {
   border-radius: 13px 0 0 13px;
 }
-.countdown .countdown-flip:first-child:before {
+.countdown .flipper:first-child:before {
   border-radius: 13px 0 0 0;
 }
-.countdown .countdown-flip:first-child .countdown-ticker a .inn {
+.countdown .flipper:first-child .ticker a .inn {
   border-radius: 12px 0 0 12px;
 }
-.countdown .countdown-flip:last-child {
+.countdown .flipper:last-child {
   border-radius: 0 13px 13px 0;
 }
-.countdown .countdown-flip:last-child:before {
+.countdown .flipper:last-child:before {
   border-radius: 0 12px 0 0;
 }
-.countdown .countdown-flip:last-child .countdown-ticker a .inn {
+.countdown .flipper:last-child .ticker a .inn {
   border-radius: 0 12px 12px 0;
 }
-.countdown .countdown-flip:last-child .up,
-.countdown .countdown-flip:last-child .down {
+.countdown .flipper:last-child .up,
+.countdown .flipper:last-child .down {
   border: 0;
 }
-.countdown .countdown-ticker {
-  width: 100%;
+.countdown .ticker {
   height: 100%;
+  width: 100%;
   position: absolute;
   z-index: 1;
   left: 0;
   top: 0;
 }
-.countdown .countdown-ticker:first-child {
+.countdown .ticker:first-child {
   z-index: 2;
 }
-.countdown .countdown-ticker .up {
+.countdown .ticker .up {
   border-right: 1px solid #202020;
 }
-.countdown .countdown-ticker .up .inn {
+.countdown .ticker .up .inn {
   top: 0;
 }
-.countdown .countdown-ticker .down {
+.countdown .ticker .down {
   border-right: 1px solid #141414;
 }
-.countdown .countdown-ticker .down .inn {
+.countdown .ticker .down .inn {
   bottom: 0;
 }
-.countdown .countdown-ticker a {
+.countdown .ticker a {
   display: block;
   height: 100%;
-  -webkit-perspective: 150px;
-  -moz-perspective: 150px;
-  perspective: 150px;
+  -webkit-perspective: 250px;
+  -moz-perspective: 250px;
+  perspective: 250px;
   cursor: text;
 }
-.countdown .countdown-ticker a div {
-  width: 100%;
+.countdown .ticker a div {
   height: 50%;
+  width: 100%;
   position: absolute;
   overflow: hidden;
   z-index: 1;
   left: 0;
 }
-.countdown .countdown-ticker a div.up {
+.countdown .ticker a div.up {
   top: 0;
   -webkit-transform-origin: 50% 100%;
   -moz-transform-origin: 50% 100%;
@@ -127,7 +124,7 @@ lesshat-selector {
   -ms-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
 }
-.countdown .countdown-ticker a div.down {
+.countdown .ticker a div.down {
   bottom: 0;
   -webkit-transform-origin: 50% 0%;
   -moz-transform-origin: 50% 0%;
@@ -135,15 +132,15 @@ lesshat-selector {
   -ms-transform-origin: 50% 0%;
   transform-origin: 50% 0%;
 }
-.countdown .countdown-ticker a .shadow {
-  width: 100%;
+.countdown .ticker a .shadow {
   height: 100%;
+  width: 100%;
   position: absolute;
   z-index: 2;
 }
-.countdown .countdown-ticker a .inn {
-  width: 100%;
+.countdown .ticker a .inn {
   height: 200%;
+  width: 100%;
   position: absolute;
   z-index: 1;
   left: 0;
@@ -157,34 +154,34 @@ lesshat-selector {
   text-align: center;
   text-shadow: 0 1px 2px #000;
 }
-.countdown .countdown-ticker.active,
-.countdown .countdown-ticker.active .down,
-.countdown .countdown-ticker.before .up {
+.countdown .ticker.active,
+.countdown .ticker.active .down,
+.countdown .ticker.before .up {
   z-index: 2;
 }
-.countdown .countdown-ticker.before {
+.countdown .ticker.before {
   z-index: 3;
 }
-.countdown .countdown-ticker.active {
+.countdown .ticker.active {
   -webkit-animation: asd 0.5s 0.5s linear both;
   -moz-animation: asd 0.5s 0.5s linear both;
   -o-animation: asd 0.5s 0.5s linear both;
   animation: asd 0.5s 0.5s linear both;
 }
-.countdown .countdown-ticker.active .down {
+.countdown .ticker.active .down {
   -webkit-animation: turn 0.5s 0.5s linear both;
   -moz-animation: turn 0.5s 0.5s linear both;
   -o-animation: turn 0.5s 0.5s linear both;
   animation: turn 0.5s 0.5s linear both;
 }
-.countdown .countdown-ticker.before .up {
+.countdown .ticker.before .up {
   -webkit-animation: turn2 0.5s linear both;
   -moz-animation: turn2 0.5s linear both;
   -o-animation: turn2 0.5s linear both;
   animation: turn2 0.5s linear both;
 }
-.countdown .countdown-ticker.before .up .shadow,
-.countdown .countdown-ticker.active .up .shadow {
+.countdown .ticker.before .up .shadow,
+.countdown .ticker.active .up .shadow {
   border-radius: 0 10px 0 0;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYigwLCAwLCAwKSIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYigwLCAwLCAwKSIgc3RvcC1vcGFjaXR5PSIwLjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjbGVzc2hhdC1nZW5lcmF0ZWQpIiAvPjwvc3ZnPg==);
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
@@ -192,20 +189,20 @@ lesshat-selector {
   background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
-.countdown .countdown-ticker.before .up .shadow {
+.countdown .ticker.before .up .shadow {
   -webkit-animation: show 0.5s linear both;
   -moz-animation: show 0.5s linear both;
   -o-animation: show 0.5s linear both;
   animation: show 0.5s linear both;
 }
-.countdown .countdown-ticker.active .up .shadow {
+.countdown .ticker.active .up .shadow {
   -webkit-animation: hide 0.5s 0.3s linear both;
   -moz-animation: hide 0.5s 0.3s linear both;
   -o-animation: hide 0.5s 0.3s linear both;
   animation: hide 0.5s 0.3s linear both;
 }
-.countdown .countdown-ticker.before .down .shadow,
-.countdown .countdown-ticker.active .down .shadow {
+.countdown .ticker.before .down .shadow,
+.countdown .ticker.active .down .shadow {
   border-radius: 0 0 10px 0;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYigwLCAwLCAwKSIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYigwLCAwLCAwKSIgc3RvcC1vcGFjaXR5PSIwLjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjbGVzc2hhdC1nZW5lcmF0ZWQpIiAvPjwvc3ZnPg==);
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
@@ -213,21 +210,19 @@ lesshat-selector {
   background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
-.countdown .countdown-ticker.before .down .shadow {
+.countdown .ticker.before .down .shadow {
   -webkit-animation: show 0.5s linear both;
   -moz-animation: show 0.5s linear both;
   -o-animation: show 0.5s linear both;
   animation: show 0.5s linear both;
 }
-.countdown .countdown-ticker.active .down .shadow {
+.countdown .ticker.active .down .shadow {
   -webkit-animation: hide 0.5s 0.3s linear both;
   -moz-animation: hide 0.5s 0.3s linear both;
   -o-animation: hide 0.5s 0.3s linear both;
   animation: hide 0.5s 0.3s linear both;
 }
-.countdown .countdown-flip:before {
-  width: 60px;
-  height: 30px;
+.countdown .flipper:before {
   z-index: 8;
   left: 1px;
   top: 0;
@@ -241,11 +236,12 @@ lesshat-selector {
   pointer-events: none;
 }
 .countdown:before,
-.countdown .countdown-flip:after {
-  width: 3px;
-  height: 15px;
+.countdown .flipper:after {
+  height: 20px;
+  width: 6px;
   z-index: 9;
-  top: 22px;
+  right: 0;
+  top: 50%;
   border: 1px solid #000;
   border-radius: 3px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMzUlIiBzdG9wLWNvbG9yPSIjNDI0MjQyIiBzdG9wLW9wYWNpdHk9IjEiLz48c3RvcCBvZmZzZXQ9IjUyJSIgc3RvcC1jb2xvcj0iIzM2MzYzNiIgc3RvcC1vcGFjaXR5PSIxIi8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiMwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNsZXNzaGF0LWdlbmVyYXRlZCkiIC8+PC9zdmc+);
@@ -254,17 +250,33 @@ lesshat-selector {
   background-image: -o-linear-gradient(top, #000, #424242 35%, #363636 52%, #000);
   background-image: linear-gradient(to bottom, #000, #424242 35%, #363636 52%, #000);
   box-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(255, 255, 255, 0.05) inset, 1px 0 10px #000, 1px 1px 0 rgba(255, 255, 255, 0.06);
-}
-.countdown .countdown-flip:after {
-  right: -3px;
+  -webkit-transform: translate(50%, -50%);
+  -moz-transform: translate(50%, -50%);
+  -o-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
 }
 .countdown:before {
-  left: -2px;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .countdown:before,
-.countdown .countdown-flip:before,
-.countdown .countdown-flip:after {
+.countdown .flipper:before,
+.countdown .flipper:after {
   display: block;
   position: absolute;
   content: '';
+}
+.countdown .flipper {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+}
+.countdown .flipper:before {
+  height: 30px;
+  width: 60px;
 }

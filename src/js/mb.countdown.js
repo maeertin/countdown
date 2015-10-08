@@ -27,10 +27,10 @@
 
 		function init() {
 			$el.append(
-				'<div class="countdown-flip js-dayPlay" />' +
-				'<div class="countdown-flip js-hourPlay" />' +
-				'<div class="countdown-flip js-minutePlay" />' +
-				'<div class="countdown-flip js-secondPlay" />'
+				'<div class="flipper js-dayPlay" />' +
+				'<div class="flipper js-hourPlay" />' +
+				'<div class="flipper js-minutePlay" />' +
+				'<div class="flipper js-secondPlay" />'
 			).addClass('countdown theme-' + settings.theme);
 
 			tick();
@@ -57,7 +57,7 @@
 				$target.find('.start, .active').removeClass('start active').addClass('before');
 
 				var output = 
-					'<div class="countdown-ticker ' + ( pageLoad ? 'start' : 'active' ) + '" data-active="' + number + '">' +
+					'<div class="ticker ' + ( pageLoad ? 'start' : 'active' ) + '" data-active="' + number + '">' +
 						'<a>' +
 							'<div class="up">' +
 								'<div class="shadow"></div>' +

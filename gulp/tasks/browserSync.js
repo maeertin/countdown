@@ -7,7 +7,7 @@ var browserSync = require('browser-sync');
 gulp.task('bs', function() {
 	browserSync({
 		server : config.host,
-		https  : true,
+		https  : false,
 		open   : false
 	});
 });
