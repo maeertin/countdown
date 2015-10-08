@@ -1,16 +1,16 @@
 {
   "name": "mb.countdown",
-  "devDependencies": {
-    "lesshat": "~3.0.2"
-  },
-  "dependencies": {
-    "jquery": "~2.1.4"
-  },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/maeertin/countdown",
   "authors": [
     "Martin Barri <maeertin@gmail.com>"
   ],
   "description": "A fancy animated countdown timer done in css and javascript",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "lesshat": "~3.0.2"
+  },
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
 }
