@@ -1,13 +1,13 @@
 {
 	"less": {
-		"src": "src/less/main.less",
+		"src": "src/less/mb.countdown.less",
 		"dist": "dist/css",
-		"id": "main"
+		"id": "mb.countdown"
 	},
 	"js": {
-		"src": "src/js/main.js",
+		"src": "src/js/mb.countdown.js",
 		"dist": "dist/js",
-		"id": "main"
+		"id": "mb.countdown"
 	},
 	"bs": {
 		"host": "localhost:4444",
