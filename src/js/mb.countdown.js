@@ -18,7 +18,7 @@
 
 		// Extend settings
 		settings = $.extend({
-			timestamp : new Date(new Date() + 12096e5), // two weeks from now
+			timestamp : new Date(+new Date() + 12096e5), // two weeks from now
 			theme     : 'advanced'
 		}, settings);
 
